@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("flaticon6024.ttf?fb47f0ea55b542f5866f730e19bb5265") format("truetype"),
+url("flaticon6024.woff?fb47f0ea55b542f5866f730e19bb5265") format("woff"),
+url("flaticon6024.woff2?fb47f0ea55b542f5866f730e19bb5265") format("woff2"),
+url("flaticon6024.eot?fb47f0ea55b542f5866f730e19bb5265#iefix") format("embedded-opentype"),
+url("flaticon6024.svg?fb47f0ea55b542f5866f730e19bb5265#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-office-building:before {
+    content: "\f101";
+}
+.flaticon-teamwork:before {
+    content: "\f102";
+}
+.flaticon-process:before {
+    content: "\f103";
+}
+.flaticon-coronavirus:before {
+    content: "\f104";
+}
+.flaticon-rating:before {
+    content: "\f105";
+}
+.flaticon-essay:before {
+    content: "\f106";
+}
+.flaticon-instructor:before {
+    content: "\f107";
+}
+.flaticon-graduated:before {
+    content: "\f108";
+}
+.flaticon-visa:before {
+    content: "\f109";
+}
+.flaticon-passport:before {
+    content: "\f10a";
+}
+.flaticon-visa-1:before {
+    content: "\f10b";
+}
+.flaticon-passport-1:before {
+    content: "\f10c";
+}
+.flaticon-passport-2:before {
+    content: "\f10d";
+}
+.flaticon-debit-card:before {
+    content: "\f10e";
+}
+.flaticon-passport-3:before {
+    content: "\f10f";
+}
+.flaticon-passport-4:before {
+    content: "\f110";
+}
+.flaticon-passport-5:before {
+    content: "\f111";
+}
+.flaticon-passport-6:before {
+    content: "\f112";
+}
+.flaticon-passport-7:before {
+    content: "\f113";
+}
+.flaticon-home:before {
+    content: "\f114";
+}
+.flaticon-travel-agency:before {
+    content: "\f115";
+}
+.flaticon-location:before {
+    content: "\f116";
+}
+.flaticon-email:before {
+    content: "\f117";
+}
+.flaticon-call:before {
+    content: "\f118";
+}
+.flaticon-passport-8:before {
+    content: "\f119";
+}
+.flaticon-quote:before {
+    content: "\f11a";
+}
+.flaticon-quote-1:before {
+    content: "\f11b";
+}
+.flaticon-right-arrow:before {
+    content: "\f11c";
+}
+.flaticon-phone-call:before {
+    content: "\f11d";
+}
+.flaticon-email-1:before {
+    content: "\f11e";
+}
+.flaticon-clock:before {
+    content: "\f11f";
+}
+.flaticon-share:before {
+    content: "\f120";
+}
+.flaticon-trophy:before {
+    content: "\f121";
+}
+.flaticon-straight-quotes:before {
+    content: "\f122";
+}
+.flaticon-customer-service:before {
+    content: "\f123";
+}
