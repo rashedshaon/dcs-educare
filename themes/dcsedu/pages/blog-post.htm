@@ -1,8 +1,0 @@
-title = "Blog Detail"
-url = "/:slug"
-layout = ""
-is_hidden = 0
-[blogPost]
-slug = "{{ :slug }}"
-==
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://dcsedu.org/wp-content/themes/template-parts/style.css"></head><body class="single single-post wp-theme-template-parts"><div style="max-width:1170px;margin:70px auto;padding:0 15px"><p><a href="/">Home</a> / <a href="/blog">Blog</a></p><h1>{{ post.title }}</h1>{% if post.featured_image %}<img src="{{ post.featured_image }}" style="max-width:100%;height:auto;margin:25px 0">{% endif %}<div>{{ post.content|raw }}</div></div></body></html>

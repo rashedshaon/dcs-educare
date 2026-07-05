@@ -1,8 +1,0 @@
-title = "Blog"
-url = "/blog"
-layout = ""
-is_hidden = 0
-[blogList]
-perPage = 8
-==
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://dcsedu.org/wp-content/themes/template-parts/style.css"></head><body class="blog wp-theme-template-parts"><div style="max-width:1170px;margin:70px auto;padding:0 15px"><h1>Latest News</h1>{% for post in posts %}<article style="margin-bottom:30px;padding:25px;border-bottom:1px solid #eee"><h3><a href="/{{ post.slug }}">{{ post.title }}</a></h3><p>{{ post.excerpt }}</p><a href="/{{ post.slug }}">Read More</a></article>{% endfor %}{% if posts.lastPage > 1 %}<div>{{ posts.currentPage }} / {{ posts.lastPage }}</div>{% endif %}</div></body></html>
