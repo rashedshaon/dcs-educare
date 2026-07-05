@@ -4,7 +4,7 @@
         <div class="carousel-inner">
             {% for slide in slides %}
                 <div class="carousel-item {{ loop.first ? 'active' : '' }}">
-                    <div class="hero-slide" style="background-image: url('{{ slide.image ? slide.image.path : ('assets/images/placeholder-hero.svg'|theme) }}')">
+                    <div class="hero-slide" style="background-image: url('{{ slide.image ? slide.image.path : ('assets/images/placeholder-hero.svg'|theme) }}'); --hero-title-color: {{ slide.title_color ?: '#102033' }}; --hero-subtitle-color: {{ slide.subtitle_color ?: 'var(--ec-accent)' }}; --hero-description-color: {{ slide.description_color ?: '#334155' }};">
                         <div class="container position-relative">
                             <div class="hero-content">
                                 {% if slide.subtitle %}<p class="section-kicker">{{ slide.subtitle }}</p>{% endif %}

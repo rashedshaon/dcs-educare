@@ -19,6 +19,24 @@ tabs:
             type: textarea
             size: small
             tab: Content
+        title_color:
+            label: Title color
+            type: colorpicker
+            default: '#102033'
+            tab: Appearance
+            span: left
+        subtitle_color:
+            label: Subtitle color
+            type: colorpicker
+            default: '#f59e0b'
+            tab: Appearance
+            span: right
+        description_color:
+            label: Short description color
+            type: colorpicker
+            default: '#334155'
+            tab: Appearance
+            span: left
         image:
             label: Slide image
             type: fileupload
