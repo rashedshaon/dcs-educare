@@ -1,0 +1,35 @@
+subject = "Potvrzení o odeslání kontaktního formuláře"
+==
+<p>Dobrý den,
+
+<br>posíláme potvrzení o odeslání kontaktního formuláře.</p>
+
+<p>Vyplnil/a jste toto:</p>
+
+{% if fieldsDetails|length %}
+
+    {% partial 'panel' body %}
+
+        {% for field in fieldsDetails %}
+
+            {% if field.value %}
+
+                <p>
+                    <strong><small>{{ field.label }}</strong></small>
+                    <br>
+                    <small>{{ field.value|raw|nl2br }}<small>
+                </p>
+                
+            {% endif %}
+
+        {% endfor %}
+
+    {% endpartial %}
+
+{% endif %}
+
+<br>
+
+<p>S pozdravem,<br>
+
+Kontaktní formulář</p>

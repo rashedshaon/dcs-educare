@@ -1,0 +1,93 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('janvince/smallcontactform/messages') ?>"><?= e(trans('janvince.smallcontactform::lang.controllers.messages.list_title')); ?></a></li>
+        <li><?= e(trans('janvince.smallcontactform::lang.controllers.messages.preview')); ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <div class="preview">
+
+        <div class="header">
+
+		    <h2><?php echo(e(trans('janvince.smallcontactform::lang.controllers.messages.preview_title')) ); ?></h2>
+
+		    <p><strong><?php echo(e(trans('janvince.smallcontactform::lang.controllers.messages.preview_date')) ); ?></strong> <?php echo($message->created_at->format('j.n.Y H:i:s')); ?></p>
+        
+        </div>
+
+        <div class="content" style="margin-top: 30px;">
+
+            <table class="table table-hover table-striped table-bordered">
+
+                <?php foreach($message->form_data as $key => $field) : ?>
+
+                    <tr>
+                        <th class="p-r-md" style="vertical-align: top; width: 20%;"><?php echo($key); ?></th>
+                        <td><?php echo( nl2br(e($field)) ) ?></td>
+                    </tr>
+
+                <?php endforeach ?>
+
+                <?php if ($message->uploads): ?>
+
+                    <tr>
+                        <td colspan=2></td>
+                    </tr>
+
+                    <tr>
+                        <th><?php echo(e(trans('janvince.smallcontactform::lang.controllers.messages.uploads')) ); ?></th>
+                        <td>
+
+                            <ul style="margin: 0;">
+                            <?php foreach($message->uploads as $upload) : ?>
+    
+                                <li>
+                                    <a href="<?php echo( $upload->getPath() ) ?>" target="blank">
+                                        <?php echo(e(trans('janvince.smallcontactform::lang.controllers.messages.file')) ); ?>
+                                    </a>
+                                </li>
+
+                            <?php endforeach ?>
+
+                            </ul>
+                        </td>
+                    </tr>
+                <?php endif ?>
+
+                    <tr><td colspan=2></td></tr>
+                    
+                    <tr>
+                        <th class="p-r-md"><?php echo(e(trans('janvince.smallcontactform::lang.controllers.messages.remote_ip')) ); ?></th>
+                        <td><?php if(!empty($message->remote_ip)) { echo($message->remote_ip); } ?></td>
+
+                    <tr>
+                        <th class="p-r-md"><?php echo(e(trans('janvince.smallcontactform::lang.components.properties.form_description')) ); ?></th>
+                        <td><?php if(!empty($message->form_description)) { echo($message->form_description); } ?></td>
+
+                    <tr>
+                        <th class="p-r-md">URL</th>
+                        <td><?php if(!empty($message->url)) { echo($message->url); } ?></td>
+
+                    <tr>
+                        <th class="p-r-md">Alias</th>
+                        <td><?php if(!empty($message->form_alias)) { echo($message->form_alias); } ?></td>
+
+            </table>
+
+        </div>
+
+    </div>
+
+<br>
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<?php endif ?>
+
+<p>
+    <a href="<?= Backend::url('janvince/smallcontactform/messages') ?>" class="btn btn-default oc-icon-chevron-left">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a>
+</p>

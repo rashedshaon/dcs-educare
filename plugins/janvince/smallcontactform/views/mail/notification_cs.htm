@@ -1,0 +1,66 @@
+subject = "Notifikace o odeslání zprávy z kontaktního formuláře"
+==
+<p>Dobrý den,
+
+<br>toto je notifikace o odeslání zprávy z kontaktního formuláře.</p>
+
+<p>Data formuláře:</p>
+
+{% if fieldsDetails|length %}
+
+    {% partial 'panel' body %}
+
+        {% for field in fieldsDetails %}
+
+        <p>
+            <strong><small>{{ field.label }}</strong></small>
+            <br>
+            <small>{{ field.value|raw|nl2br }}<small>
+        </p>
+
+        {% endfor %}
+
+		{% if uploads|length %}
+
+			<p>
+				<strong><small>Nahrané soubory</strong></small>
+				<br>
+
+				{% for upload in uploads %}
+
+					<small><a href="{{ upload.getPath }}" target="_blank">Soubor {{ loop.index }}</a></small>
+
+					{{ loop.last is empty ? '<br>' }}
+
+				{% endfor %}
+
+			</p>
+
+
+		{% endif %}
+
+    {% endpartial %}
+
+{% endif %}
+
+	{% partial 'panel' body %}
+
+        <p>
+            <strong><small>URL stránky</strong></small>
+            <br>
+            <small>{{ url }}<small>
+        </p>
+
+        <p>
+            <strong><small>Alias formuláře</strong></small>
+            <br>
+            <small>{{ form_alias }}<small>
+        </p>
+
+	{% endpartial %}
+
+<br>
+
+<p>S pozdravem,<br>
+
+Kontaktní formulář</p>

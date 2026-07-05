@@ -1,0 +1,35 @@
+subject = "Contact form autoreply"
+==
+<p>Hello,
+
+<br>this is the confirmation message from the Contact Form.</p>
+
+<p>You sent this:</p>
+
+{% if fieldsDetails|length %}
+
+    {% partial 'panel' body %}
+
+        {% for field in fieldsDetails %}
+
+            {% if field.value %}
+
+                <p>
+                    <strong><small>{{ field.label }}</strong></small>
+                    <br>
+                    <small>{{ field.value|raw|nl2br }}<small>
+                </p>
+                
+            {% endif %}
+
+        {% endfor %}
+
+    {% endpartial %}
+
+{% endif %}
+
+<br>
+
+<p>Best regards,<br>
+
+Contact Form</p>
