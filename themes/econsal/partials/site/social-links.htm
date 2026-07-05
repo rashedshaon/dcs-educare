@@ -1,0 +1,9 @@
+{% if socialLinks|length %}
+    <div class="social-links">
+        {% for social in socialLinks %}
+            <a href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+                <i class="{{ social.icon ?: 'bi bi-link-45deg' }}"></i>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

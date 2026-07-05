@@ -1,0 +1,15 @@
+columns:
+    code:
+        label: Code
+        searchable: true
+    title:
+        label: Title
+        searchable: true
+    is_active:
+        label: Active
+        type: switch
+    sort_order:
+        label: Sort
+    updated_at:
+        label: Updated
+        type: datetime

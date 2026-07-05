@@ -1,0 +1,25 @@
+{% if countries|length %}
+<section class="section-pad">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Countries We Offer</p>
+            <h2>Choose Your Study Destination</h2>
+        </div>
+        <div class="row g-4">
+            {% for country in countries %}
+                <div class="col-sm-6 col-lg-3">
+                    <article class="image-card">
+                        <img src="{{ country.image ? country.image.path : ('assets/images/placeholder-card.svg'|theme) }}" alt="{{ country.name }}" loading="lazy">
+                        {% if country.flag_image %}<img class="flag" src="{{ country.flag_image.path }}" alt="{{ country.name }} flag" loading="lazy">{% endif %}
+                        <div class="image-card-content">
+                            <h3>{{ country.name }}</h3>
+                            <p>{{ country.short_description }}</p>
+                            {% if country.button_text and country.button_link %}<a href="{{ country.button_link }}">{{ country.button_text }} <i class="bi bi-arrow-right"></i></a>{% endif %}
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

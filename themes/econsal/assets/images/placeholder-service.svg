@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" role="img" aria-label="Student services">
+  <rect width="1000" height="800" fill="#eef7fb"/>
+  <rect x="160" y="180" width="680" height="440" rx="24" fill="#fff"/>
+  <path d="M260 290h480v36H260zM260 380h360v28H260zM260 440h420v28H260zM260 500h300v28H260z" fill="#102033" opacity=".7"/>
+  <circle cx="740" cy="180" r="90" fill="#f59e0b" opacity=".8"/>
+</svg>

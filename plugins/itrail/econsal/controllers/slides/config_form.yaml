@@ -1,0 +1,10 @@
+name: Slide
+modelClass: ItRail\Econsal\Models\Slide
+form: $/itrail/econsal/models/slide/fields.yaml
+defaultRedirect: itrail/econsal/slides
+create:
+    redirect: itrail/econsal/slides/update/:id
+    redirectClose: itrail/econsal/slides
+update:
+    redirect: itrail/econsal/slides
+    redirectClose: itrail/econsal/slides

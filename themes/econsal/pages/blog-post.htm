@@ -1,0 +1,22 @@
+title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog"
+==
+{% set post = blogPost.post %}
+{% if post %}
+    {% partial 'common/page-title' title=post.title subtitle=(post.published_at|date('M d, Y')) %}
+    <article class="section-pad">
+        <div class="container article-container">
+            {% if post.featured_images.count %}
+                <img class="article-image" src="{{ post.featured_images.first.path }}" alt="{{ post.title }}" loading="lazy">
+            {% endif %}
+            <div class="richtext article-body">{{ post.content_html|raw }}</div>
+        </div>
+    </article>
+{% else %}
+    {% partial 'common/page-title' title='Post not found' %}
+{% endif %}

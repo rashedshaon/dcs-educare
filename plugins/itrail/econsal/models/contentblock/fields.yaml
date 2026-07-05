@@ -1,0 +1,59 @@
+tabs:
+    fields:
+        is_active:
+            label: Active
+            type: switch
+            default: true
+            tab: Content
+        code:
+            label: Unique code/slug
+            required: true
+            tab: Content
+            span: left
+        title:
+            label: Title
+            tab: Content
+            span: right
+        subtitle:
+            label: Subtitle
+            tab: Content
+        content:
+            label: Rich text content
+            type: richeditor
+            tab: Content
+        image:
+            label: Image
+            type: fileupload
+            mode: image
+            tab: Content
+            span: left
+        button_text:
+            label: Button text
+            tab: Content
+            span: left
+        button_link:
+            label: Button link
+            tab: Content
+            span: right
+        sort_order:
+            label: Sort order
+            type: number
+            default: 0
+            tab: Content
+            span: left
+        meta_title:
+            label: Meta title
+            tab: SEO
+        meta_description:
+            label: Meta description
+            tab: SEO
+            type: textarea
+            size: tiny
+        meta_keywords:
+            label: Meta keywords
+            tab: SEO
+        og_image:
+            label: OG image
+            type: fileupload
+            mode: image
+            tab: SEO

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-label="Student success">
+  <rect width="900" height="1600" fill="#102033"/>
+  <circle cx="450" cy="470" r="180" fill="#f59e0b"/>
+  <path d="M180 1320c40-250 190-390 270-390s230 140 270 390z" fill="#0f766e"/>
+  <rect x="150" y="80" width="600" height="96" rx="48" fill="#fff" opacity=".15"/>
+</svg>

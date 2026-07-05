@@ -1,0 +1,33 @@
+{% if services|length %}
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                {% set featured = services.first %}
+                <img class="rounded-img" src="{{ featured.image ? featured.image.path : ('assets/images/placeholder-service.svg'|theme) }}" alt="{{ featured.title }}" loading="lazy">
+            </div>
+            <div class="col-lg-7">
+                <p class="section-kicker">What Services We Provide</p>
+                <h2>Complete Student Support</h2>
+                <div class="accordion ec-accordion" id="servicesAccordion">
+                    {% for service in services %}
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button {{ not loop.first ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#service{{ service.id }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}" aria-controls="service{{ service.id }}">
+                                    {% if service.icon_class %}<i class="{{ service.icon_class }}"></i>{% endif %} {{ service.title }}
+                                </button>
+                            </h3>
+                            <div id="service{{ service.id }}" class="accordion-collapse collapse {{ loop.first ? 'show' : '' }}" data-bs-parent="#servicesAccordion">
+                                <div class="accordion-body">
+                                    <p>{{ service.short_description }}</p>
+                                    <div class="richtext">{{ service.content|raw }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

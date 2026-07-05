@@ -1,0 +1,10 @@
+title: Success Students
+modelClass: ItRail\Econsal\Models\SuccessStudent
+list: $/itrail/econsal/models/successstudent/columns.yaml
+recordUrl: itrail/econsal/successstudents/update/:id
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

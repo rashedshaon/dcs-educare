@@ -1,0 +1,13 @@
+name: Econsal
+description: Professional education consultancy theme powered by ItRail.Econsal.
+author: ItRail
+homepage: ''
+code: econsal
+form:
+    fields:
+        main_menu_code:
+            label: Main menu code
+            default: main-menu
+        footer_menu_code:
+            label: Footer menu code
+            default: footer-menu

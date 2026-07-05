@@ -1,0 +1,32 @@
+title = "Contact Us"
+url = "/contact"
+layout = "default"
+
+[contentBlock contactIntro]
+code = "contact-intro"
+var = "contactIntro"
+
+[contactForm]
+==
+{% partial 'common/page-title' title='Contact Us' subtitle=contactIntro.subtitle %}
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="contact-panel">{% component 'contactForm' %}</div>
+            </div>
+            <div class="col-lg-6">
+                <p class="section-kicker">{{ contactIntro.subtitle }}</p>
+                <h2>{{ contactIntro.title }}</h2>
+                <div class="richtext">{{ contactIntro.content|raw }}</div>
+                {% partial 'site/contact-info' %}
+                {% if whatsappLink %}<a class="btn btn-ec mt-3" href="{{ whatsappLink }}" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>{% endif %}
+            </div>
+        </div>
+        {% if settings.google_map_embed_url %}
+            <div class="ratio ratio-21x9 map-frame mt-5">
+                <iframe src="{{ settings.google_map_embed_url }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Office map"></iframe>
+            </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,10 @@
+name: Econsal Settings
+modelClass: ItRail\Econsal\Models\Settings
+form: $/itrail/econsal/models/settings/fields.yaml
+defaultRedirect: itrail/econsal/settings
+create:
+    redirect: itrail/econsal/settings/update
+    redirectClose: itrail/econsal/settings
+update:
+    redirect: itrail/econsal/settings
+    redirectClose: itrail/econsal/settings

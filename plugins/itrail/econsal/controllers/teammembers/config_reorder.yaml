@@ -1,0 +1,5 @@
+title: Reorder Team Members
+modelClass: ItRail\Econsal\Models\TeamMember
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

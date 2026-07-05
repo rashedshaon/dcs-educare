@@ -1,0 +1,5 @@
+title: Reorder Slides
+modelClass: ItRail\Econsal\Models\Slide
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

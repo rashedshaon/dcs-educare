@@ -1,0 +1,5 @@
+<div data-control="toolbar">
+    <a href="<?= Backend::url('itrail/econsal/successstudents/create') ?>" class="btn btn-primary oc-icon-plus">Create</a>
+    <a href="<?= Backend::url('itrail/econsal/successstudents/reorder') ?>" class="btn btn-default oc-icon-sort">Reorder</a>
+    <button class="btn btn-default oc-icon-trash-o" disabled="disabled" onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })" data-request="onDelete" data-request-confirm="Delete selected records?" data-trigger-action="enable" data-trigger=".control-list input[type=checkbox]" data-trigger-condition="checked" data-stripe-load-indicator>Delete</button>
+</div>

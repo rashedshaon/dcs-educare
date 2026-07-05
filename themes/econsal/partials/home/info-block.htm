@@ -1,0 +1,23 @@
+{% if infoBlock %}
+<section class="section-pad">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="video-panel">
+                    {% if infoBlock.image %}
+                        <img src="{{ infoBlock.image.path }}" alt="{{ infoBlock.title }}" loading="lazy">
+                    {% else %}
+                        <div class="ratio ratio-16x9 bg-soft d-flex align-items-center justify-content-center"><i class="bi bi-play-circle"></i></div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                {% if infoBlock.subtitle %}<p class="section-kicker">{{ infoBlock.subtitle }}</p>{% endif %}
+                <h2>{{ infoBlock.title }}</h2>
+                <div class="richtext">{{ infoBlock.content|raw }}</div>
+                {% if infoBlock.button_text and infoBlock.button_link %}<a class="btn btn-ec mt-3" href="{{ infoBlock.button_link }}">{{ infoBlock.button_text }}</a>{% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,64 @@
+tabs:
+    fields:
+        is_active:
+            label: Active
+            type: switch
+            default: true
+            tab: Content
+        title:
+            label: Title
+            required: true
+            tab: Content
+            span: left
+        short_description:
+            label: Short description
+            type: textarea
+            size: small
+            tab: Content
+            span: right
+        image:
+            label: Image
+            type: fileupload
+            mode: image
+            tab: Content
+            span: left
+        icon_image:
+            label: Icon image
+            type: fileupload
+            mode: image
+            tab: Content
+            span: right
+        icon_class:
+            label: Icon class
+            comment: Example: bi bi-passport
+            tab: Content
+            span: left
+        button_text:
+            label: Button text
+            tab: Content
+            span: left
+        button_link:
+            label: Button link
+            tab: Content
+            span: right
+        sort_order:
+            label: Sort order
+            type: number
+            default: 0
+            tab: Content
+        meta_title:
+            label: Meta title
+            tab: SEO
+        meta_description:
+            label: Meta description
+            tab: SEO
+            type: textarea
+            size: tiny
+        meta_keywords:
+            label: Meta keywords
+            tab: SEO
+        og_image:
+            label: OG image
+            type: fileupload
+            mode: image
+            tab: SEO

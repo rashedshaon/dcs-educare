@@ -1,0 +1,5 @@
+title: Reorder Countries
+modelClass: ItRail\Econsal\Models\Country
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

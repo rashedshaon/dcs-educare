@@ -1,0 +1,4 @@
+v1.0.1:
+    - First version of Econsal.
+    - create_tables.php
+    - seed_demo_data.php

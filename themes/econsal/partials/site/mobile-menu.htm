@@ -1,0 +1,12 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileMenuLabel">{{ settings.site_name ?: 'Econsal' }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        {% partial 'site/nav' items=items %}
+        {% if settings.header_button_text and settings.header_button_link %}
+            <a class="btn btn-ec w-100 mt-3" href="{{ settings.header_button_link }}">{{ settings.header_button_text }}</a>
+        {% endif %}
+    </div>
+</div>

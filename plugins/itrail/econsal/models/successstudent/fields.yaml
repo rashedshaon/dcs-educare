@@ -1,0 +1,45 @@
+tabs:
+    fields:
+        is_active:
+            label: Active
+            type: switch
+            default: true
+            tab: Content
+        student_name:
+            label: Student name
+            required: true
+            tab: Content
+            span: left
+        country:
+            label: Country
+            tab: Content
+            span: right
+        university:
+            label: University/college name
+            tab: Content
+            span: left
+        visa_type:
+            label: Visa type
+            tab: Content
+            span: right
+        image:
+            label: Student image
+            comment: Portrait image works best, preferably 9:16.
+            type: fileupload
+            mode: image
+            tab: Content
+            span: left
+        youtube_url:
+            label: YouTube video URL
+            tab: Content
+            span: right
+        testimonial:
+            label: Short testimonial
+            type: textarea
+            size: small
+            tab: Content
+        sort_order:
+            label: Sort order
+            type: number
+            default: 0
+            tab: Content

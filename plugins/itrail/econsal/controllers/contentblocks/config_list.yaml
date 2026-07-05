@@ -1,0 +1,10 @@
+title: Content Blocks
+modelClass: ItRail\Econsal\Models\ContentBlock
+list: $/itrail/econsal/models/contentblock/columns.yaml
+recordUrl: itrail/econsal/contentblocks/update/:id
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

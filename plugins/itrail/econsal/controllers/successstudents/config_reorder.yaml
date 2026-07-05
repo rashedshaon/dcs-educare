@@ -1,0 +1,5 @@
+title: Reorder Success Students
+modelClass: ItRail\Econsal\Models\SuccessStudent
+nameFrom: student_name
+toolbar:
+    buttons: reorder_toolbar

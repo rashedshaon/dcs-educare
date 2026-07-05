@@ -1,0 +1,5 @@
+title: Reorder Services
+modelClass: ItRail\Econsal\Models\Service
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

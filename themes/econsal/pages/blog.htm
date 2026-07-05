@@ -1,0 +1,43 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 9
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "blog-post"
+==
+{% partial 'common/page-title' title='Blog' subtitle='Study abroad insights, admissions guidance, and visa updates' %}
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-4">
+            {% for post in blogPosts.posts %}
+                <div class="col-md-6 col-lg-4">
+                    <article class="blog-card">
+                        {% if post.featured_images.count %}<img src="{{ post.featured_images.first.path }}" alt="{{ post.title }}" loading="lazy">{% endif %}
+                        <div class="blog-card-body">
+                            <time>{{ post.published_at|date('M d, Y') }}</time>
+                            <h2><a href="{{ 'blog-post'|page({ slug: post.slug }) }}">{{ post.title }}</a></h2>
+                            <p>{{ post.excerpt ?: post.summary|striptags|slice(0, 140) }}</p>
+                            <a class="read-more" href="{{ 'blog-post'|page({ slug: post.slug }) }}">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            {% else %}
+                <div class="col-12"><p>No posts found.</p></div>
+            {% endfor %}
+        </div>
+        {% if blogPosts.posts.lastPage > 1 %}
+            <nav class="mt-5" aria-label="Blog pagination">
+                <ul class="pagination justify-content-center">
+                    {% for page in 1..blogPosts.posts.lastPage %}
+                        <li class="page-item {{ blogPosts.posts.currentPage == page ? 'active' : '' }}"><a class="page-link" href="{{ 'blog'|page({ page: page }) }}">{{ page }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,41 @@
+tabs:
+    fields:
+        is_active:
+            label: Active
+            type: switch
+            default: true
+            tab: Content
+        name:
+            label: Name
+            required: true
+            tab: Content
+            span: left
+        designation:
+            label: Designation
+            tab: Content
+            span: right
+        image:
+            label: Photo
+            type: fileupload
+            mode: image
+            tab: Content
+            span: left
+        bio:
+            label: Short bio
+            type: textarea
+            size: small
+            tab: Content
+            span: right
+        facebook_url:
+            label: Facebook
+            tab: Social
+            span: left
+        linkedin_url:
+            label: LinkedIn
+            tab: Social
+            span: right
+        sort_order:
+            label: Sort order
+            type: number
+            default: 0
+            tab: Content

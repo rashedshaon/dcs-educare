@@ -1,0 +1,10 @@
+title: Visa Categories
+modelClass: ItRail\Econsal\Models\VisaCategory
+list: $/itrail/econsal/models/visacategory/columns.yaml
+recordUrl: itrail/econsal/visacategories/update/:id
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

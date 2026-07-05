@@ -1,0 +1,23 @@
+{% if requiredDocuments %}
+<section class="section-pad bg-light-blue">
+    <div class="container">
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7">
+                <p class="section-kicker">{{ requiredDocuments.subtitle }}</p>
+                <h2>{{ requiredDocuments.title }}</h2>
+                <div class="richtext">{{ requiredDocuments.content|raw }}</div>
+            </div>
+            <div class="col-lg-5">
+                <div class="appointment-card">
+                    <i class="bi bi-calendar2-check"></i>
+                    <h3>{{ settings.emergency_cta_text ?: 'Book Appointment' }}</h3>
+                    <p>Share your study goal with our counselling team and get a clear document checklist.</p>
+                    {% if requiredDocuments.button_text and requiredDocuments.button_link %}
+                        <a class="btn btn-ec w-100" href="{{ requiredDocuments.button_link }}">{{ requiredDocuments.button_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

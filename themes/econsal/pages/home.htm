@@ -1,0 +1,73 @@
+title = "Home"
+url = "/"
+layout = "default"
+meta_title = "Education Consultancy"
+
+[homeSlider]
+[infoBlock]
+[requiredDocuments]
+[countriesList]
+[visaCategoryList]
+[successStudents]
+[contentBlock homeCta]
+code = "home-cta"
+var = "homeCta"
+
+[blogPosts latestPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "blog-post"
+==
+{% partial 'home/slider' %}
+{% partial 'home/info-block' %}
+{% partial 'home/required-documents' %}
+{% partial 'home/countries' %}
+{% partial 'home/visa-categories' %}
+{% partial 'home/services' %}
+{% partial 'home/success-students' %}
+{% partial 'common/cta' block=homeCta %}
+
+<section class="section-pad">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Latest Blog Posts</p>
+            <h2>Insights For Future Students</h2>
+        </div>
+        <div class="row g-4">
+            {% for post in latestPosts.posts %}
+                <div class="col-md-4">
+                    <article class="blog-card">
+                        {% if post.featured_images.count %}
+                            <img src="{{ post.featured_images.first.path }}" alt="{{ post.title }}" loading="lazy">
+                        {% endif %}
+                        <div class="blog-card-body">
+                            <time>{{ post.published_at|date('M d, Y') }}</time>
+                            <h3><a href="{{ 'blog-post'|page({ slug: post.slug }) }}">{{ post.title }}</a></h3>
+                            <p>{{ post.excerpt ?: post.summary|striptags|slice(0, 130) }}</p>
+                            <a class="read-more" href="{{ 'blog-post'|page({ slug: post.slug }) }}">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            {% else %}
+                <div class="col-12"><p>No posts found.</p></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="contact-band">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+                <h2>{{ settings.emergency_cta_text ?: 'Need help choosing your study destination?' }}</h2>
+                <p>Call, email, or message us on WhatsApp for appointment support.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a class="btn btn-ec" href="{{ 'contact'|page }}">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+columns:
+    student_name:
+        label: Student
+        searchable: true
+    country:
+        label: Country
+        searchable: true
+    visa_type:
+        label: Visa
+    is_active:
+        label: Active
+        type: switch
+    sort_order:
+        label: Sort

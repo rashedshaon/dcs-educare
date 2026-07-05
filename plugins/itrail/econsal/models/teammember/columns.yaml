@@ -1,0 +1,12 @@
+columns:
+    name:
+        label: Name
+        searchable: true
+    designation:
+        label: Designation
+        searchable: true
+    is_active:
+        label: Active
+        type: switch
+    sort_order:
+        label: Sort

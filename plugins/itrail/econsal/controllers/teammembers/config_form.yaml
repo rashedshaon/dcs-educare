@@ -1,0 +1,10 @@
+name: Team Member
+modelClass: ItRail\Econsal\Models\TeamMember
+form: $/itrail/econsal/models/teammember/fields.yaml
+defaultRedirect: itrail/econsal/teammembers
+create:
+    redirect: itrail/econsal/teammembers/update/:id
+    redirectClose: itrail/econsal/teammembers
+update:
+    redirect: itrail/econsal/teammembers
+    redirectClose: itrail/econsal/teammembers

@@ -1,0 +1,28 @@
+{% if teamMembers|length %}
+<section class="section-pad">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Our Team</p>
+            <h2>Meet Our Counsellors</h2>
+        </div>
+        <div class="row g-4">
+            {% for member in teamMembers %}
+                <div class="col-sm-6 col-lg-3">
+                    <article class="team-card">
+                        <img src="{{ member.image ? member.image.path : ('assets/images/placeholder-portrait.svg'|theme) }}" alt="{{ member.name }}" loading="lazy">
+                        <div class="team-card-body">
+                            <h3>{{ member.name }}</h3>
+                            <p>{{ member.designation }}</p>
+                            {% if member.bio %}<span>{{ member.bio }}</span>{% endif %}
+                            <div class="team-social">
+                                {% if member.facebook_url %}<a href="{{ member.facebook_url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} Facebook"><i class="bi bi-facebook"></i></a>{% endif %}
+                                {% if member.linkedin_url %}<a href="{{ member.linkedin_url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} LinkedIn"><i class="bi bi-linkedin"></i></a>{% endif %}
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

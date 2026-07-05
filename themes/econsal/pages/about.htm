@@ -1,0 +1,35 @@
+title = "About Us"
+url = "/about"
+layout = "default"
+
+[contentBlock aboutIntro]
+code = "about-intro"
+var = "aboutIntro"
+
+[teamMembers]
+==
+{% partial 'common/page-title' title='About Us' subtitle=aboutIntro.subtitle %}
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                {% if aboutIntro.image %}<img class="rounded-img" src="{{ aboutIntro.image.path }}" alt="{{ aboutIntro.title }}" loading="lazy">{% endif %}
+            </div>
+            <div class="col-lg-6">
+                <p class="section-kicker">{{ aboutIntro.subtitle }}</p>
+                <h2>{{ aboutIntro.title }}</h2>
+                <div class="richtext">{{ aboutIntro.content|raw }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-pad bg-light-blue">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4"><div class="feature-tile"><i class="bi bi-bullseye"></i><h3>Mission</h3><p>Guide students with accurate counselling and transparent processes.</p></div></div>
+            <div class="col-md-4"><div class="feature-tile"><i class="bi bi-eye"></i><h3>Vision</h3><p>Make international education more accessible, planned, and successful.</p></div></div>
+            <div class="col-md-4"><div class="feature-tile"><i class="bi bi-award"></i><h3>Why Choose Us</h3><p>Experienced counsellors, careful documentation, and student-first support.</p></div></div>
+        </div>
+    </div>
+</section>
+{% partial 'about/team' %}

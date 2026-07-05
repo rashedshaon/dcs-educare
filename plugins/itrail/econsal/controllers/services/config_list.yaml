@@ -1,0 +1,10 @@
+title: Services
+modelClass: ItRail\Econsal\Models\Service
+list: $/itrail/econsal/models/service/columns.yaml
+recordUrl: itrail/econsal/services/update/:id
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

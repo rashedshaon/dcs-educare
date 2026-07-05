@@ -1,0 +1,23 @@
+{% if successStudents|length %}
+<section class="section-pad bg-dark-ec text-white">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Success Students</p>
+            <h2>Real Student Journeys</h2>
+        </div>
+        <div class="success-strip">
+            {% for student in successStudents %}
+                <article class="reel-card">
+                    <img src="{{ student.image ? student.image.path : ('assets/images/placeholder-portrait.svg'|theme) }}" alt="{{ student.student_name }}" loading="lazy">
+                    {% if student.youtube_url %}<button class="video-play small" type="button" data-video-url="{{ student.youtube_url }}" aria-label="Play {{ student.student_name }} video"><i class="bi bi-play-fill"></i></button>{% endif %}
+                    <div class="reel-info">
+                        <h3>{{ student.student_name }}</h3>
+                        <p>{{ student.country }}{% if student.university %} · {{ student.university }}{% endif %}</p>
+                        {% if student.visa_type %}<span>{{ student.visa_type }}</span>{% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

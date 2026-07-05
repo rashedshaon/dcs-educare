@@ -1,0 +1,22 @@
+title = "Student Services"
+url = "/student-services"
+layout = "default"
+
+[contentBlock serviceIntro]
+code = "student-services"
+var = "serviceIntro"
+
+==
+{% partial 'common/page-title' title='Student Services' subtitle=serviceIntro.subtitle %}
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="section-kicker">{{ serviceIntro.subtitle }}</p>
+                <h2>{{ serviceIntro.title }}</h2>
+                <div class="richtext">{{ serviceIntro.content|raw }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% partial 'home/services' %}

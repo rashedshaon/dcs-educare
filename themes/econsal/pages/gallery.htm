@@ -1,0 +1,12 @@
+title = "Gallery"
+url = "/gallery"
+layout = "default"
+
+[galleriesList]
+==
+{% partial 'common/page-title' title='Gallery' subtitle='Moments from our student success and events' %}
+<section class="section-pad">
+    <div class="container gallery-wrap">
+        {% component 'galleriesList' %}
+    </div>
+</section>

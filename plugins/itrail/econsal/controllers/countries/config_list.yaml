@@ -1,0 +1,10 @@
+title: Countries
+modelClass: ItRail\Econsal\Models\Country
+list: $/itrail/econsal/models/country/columns.yaml
+recordUrl: itrail/econsal/countries/update/:id
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

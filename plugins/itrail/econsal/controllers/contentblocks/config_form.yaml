@@ -1,0 +1,10 @@
+name: Content Block
+modelClass: ItRail\Econsal\Models\ContentBlock
+form: $/itrail/econsal/models/contentblock/fields.yaml
+defaultRedirect: itrail/econsal/contentblocks
+create:
+    redirect: itrail/econsal/contentblocks/update/:id
+    redirectClose: itrail/econsal/contentblocks
+update:
+    redirect: itrail/econsal/contentblocks
+    redirectClose: itrail/econsal/contentblocks

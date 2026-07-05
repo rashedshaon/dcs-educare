@@ -1,0 +1,25 @@
+{% if visaCategories|length %}
+<section class="section-pad bg-cream">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Our VISA Categories</p>
+            <h2>Visa Guidance For Every Pathway</h2>
+        </div>
+        <div class="row g-4">
+            {% for visa in visaCategories %}
+                <div class="col-md-6 col-lg-4">
+                    <article class="visa-card">
+                        <img src="{{ visa.image ? visa.image.path : ('assets/images/placeholder-card.svg'|theme) }}" alt="{{ visa.title }}" loading="lazy">
+                        <div class="visa-card-body">
+                            {% if visa.icon_image %}<img class="card-icon-img" src="{{ visa.icon_image.path }}" alt="">{% elseif visa.icon_class %}<i class="{{ visa.icon_class }}"></i>{% endif %}
+                            <h3>{{ visa.title }}</h3>
+                            <p>{{ visa.short_description }}</p>
+                            {% if visa.button_text and visa.button_link %}<a class="stretched-link" href="{{ visa.button_link }}">{{ visa.button_text }}</a>{% endif %}
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

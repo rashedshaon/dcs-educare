@@ -1,0 +1,34 @@
+title = "Study Abroad"
+url = "/study-abroad"
+layout = "default"
+
+[contentBlock studyIntro]
+code = "study-abroad"
+var = "studyIntro"
+
+[countriesList]
+[visaCategoryList]
+[contentBlock docsBlock]
+code = "required-documents"
+var = "requiredDocuments"
+==
+{% partial 'common/page-title' title='Study Abroad' subtitle=studyIntro.subtitle %}
+<section class="section-pad">
+    <div class="container">
+        <div class="richtext intro-copy">{{ studyIntro.content|raw }}</div>
+    </div>
+</section>
+{% partial 'home/countries' %}
+<section class="section-pad bg-light-blue">
+    <div class="container">
+        <div class="section-head"><p class="section-kicker">Admission Process</p><h2>Simple Timeline</h2></div>
+        <div class="timeline-grid">
+            <div><span>01</span><h3>Counselling</h3><p>Profile evaluation and destination planning.</p></div>
+            <div><span>02</span><h3>Application</h3><p>Course, university, SOP, and document support.</p></div>
+            <div><span>03</span><h3>Offer & Visa</h3><p>Admission follow-up, visa file, and interview preparation.</p></div>
+            <div><span>04</span><h3>Departure</h3><p>Travel, accommodation, and pre-departure briefing.</p></div>
+        </div>
+    </div>
+</section>
+{% partial 'home/required-documents' %}
+{% partial 'home/visa-categories' %}

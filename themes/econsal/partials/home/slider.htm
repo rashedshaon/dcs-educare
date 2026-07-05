@@ -1,0 +1,43 @@
+{% if slides|length %}
+<section class="hero-slider">
+    <div id="homeHero" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for slide in slides %}
+                <div class="carousel-item {{ loop.first ? 'active' : '' }}">
+                    <div class="hero-slide" style="background-image: url('{{ slide.image ? slide.image.path : ('assets/images/placeholder-hero.svg'|theme) }}')">
+                        <div class="container position-relative">
+                            <div class="hero-content">
+                                {% if slide.subtitle %}<p class="section-kicker">{{ slide.subtitle }}</p>{% endif %}
+                                <h1>{{ slide.title }}</h1>
+                                {% if slide.description %}<p>{{ slide.description }}</p>{% endif %}
+                                <div class="d-flex flex-wrap gap-3 align-items-center">
+                                    {% if slide.primary_button_text and slide.primary_button_link %}<a class="btn btn-ec" href="{{ slide.primary_button_link }}">{{ slide.primary_button_text }}</a>{% endif %}
+                                    {% if slide.secondary_button_text and slide.secondary_button_link %}<a class="btn btn-outline-light" href="{{ slide.secondary_button_link }}">{{ slide.secondary_button_text }}</a>{% endif %}
+                                    {% if slide.youtube_url %}
+                                        <button class="video-play" type="button" data-video-url="{{ slide.youtube_url }}" aria-label="Play video"><i class="bi bi-play-fill"></i></button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% if slides|length > 1 %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeHero" data-bs-slide="prev" aria-label="Previous slide"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeHero" data-bs-slide="next" aria-label="Next slide"><span class="carousel-control-next-icon"></span></button>
+        {% endif %}
+    </div>
+</section>
+
+<div class="modal fade video-modal" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <button type="button" class="btn-close video-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="ratio ratio-16x9">
+                <iframe id="videoModalFrame" src="" title="Video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

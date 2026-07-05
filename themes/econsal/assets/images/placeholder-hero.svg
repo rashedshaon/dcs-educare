@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Education consultancy">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#102033"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <circle cx="1280" cy="220" r="170" fill="#f59e0b" opacity=".35"/>
+  <path d="M260 590h1080v52H260zM340 500h360v52H340zM340 420h560v52H340z" fill="#fff" opacity=".86"/>
+</svg>

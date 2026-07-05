@@ -1,0 +1,14 @@
+<ul class="contact-list">
+    {% for phone in phones %}
+        <li><i class="bi bi-telephone"></i><a href="tel:{{ phone|replace({' ': '', '-': ''}) }}">{{ phone }}</a></li>
+    {% endfor %}
+    {% for email in emails %}
+        <li><i class="bi bi-envelope"></i><a href="mailto:{{ email }}">{{ email }}</a></li>
+    {% endfor %}
+    {% for address in addresses %}
+        <li><i class="bi bi-geo-alt"></i><span>{{ address }}</span></li>
+    {% endfor %}
+    {% if settings.office_hours %}
+        <li><i class="bi bi-clock"></i><span>{{ settings.office_hours|nl2br }}</span></li>
+    {% endif %}
+</ul>

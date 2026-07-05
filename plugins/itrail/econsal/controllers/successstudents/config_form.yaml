@@ -1,0 +1,10 @@
+name: Success Student
+modelClass: ItRail\Econsal\Models\SuccessStudent
+form: $/itrail/econsal/models/successstudent/fields.yaml
+defaultRedirect: itrail/econsal/successstudents
+create:
+    redirect: itrail/econsal/successstudents/update/:id
+    redirectClose: itrail/econsal/successstudents
+update:
+    redirect: itrail/econsal/successstudents
+    redirectClose: itrail/econsal/successstudents

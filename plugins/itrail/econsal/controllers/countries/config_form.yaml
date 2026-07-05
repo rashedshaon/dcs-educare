@@ -1,0 +1,10 @@
+name: Country
+modelClass: ItRail\Econsal\Models\Country
+form: $/itrail/econsal/models/country/fields.yaml
+defaultRedirect: itrail/econsal/countries
+create:
+    redirect: itrail/econsal/countries/update/:id
+    redirectClose: itrail/econsal/countries
+update:
+    redirect: itrail/econsal/countries
+    redirectClose: itrail/econsal/countries

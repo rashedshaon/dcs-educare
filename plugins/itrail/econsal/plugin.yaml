@@ -1,0 +1,71 @@
+plugin:
+    name: Econsal
+    description: Dynamic education consultancy website content manager.
+    author: ItRail
+    icon: icon-graduation-cap
+    homepage: ''
+
+permissions:
+    itrail.econsal.manage_settings:
+        tab: Econsal
+        label: Manage Econsal settings
+    itrail.econsal.manage_content:
+        tab: Econsal
+        label: Manage Econsal content
+
+navigation:
+    econsal:
+        label: Econsal
+        url: itrail/econsal/settings
+        icon: icon-graduation-cap
+        permissions:
+            - itrail.econsal.*
+        sideMenu:
+            settings:
+                label: Settings
+                url: itrail/econsal/settings
+                icon: icon-cog
+                permissions:
+                    - itrail.econsal.manage_settings
+            slides:
+                label: Slides
+                url: itrail/econsal/slides
+                icon: icon-image
+                permissions:
+                    - itrail.econsal.manage_content
+            countries:
+                label: Countries
+                url: itrail/econsal/countries
+                icon: icon-globe
+                permissions:
+                    - itrail.econsal.manage_content
+            visa_categories:
+                label: Visa Categories
+                url: itrail/econsal/visacategories
+                icon: icon-id-card
+                permissions:
+                    - itrail.econsal.manage_content
+            services:
+                label: Services
+                url: itrail/econsal/services
+                icon: icon-briefcase
+                permissions:
+                    - itrail.econsal.manage_content
+            success_students:
+                label: Success Students
+                url: itrail/econsal/successstudents
+                icon: icon-star
+                permissions:
+                    - itrail.econsal.manage_content
+            team_members:
+                label: Team Members
+                url: itrail/econsal/teammembers
+                icon: icon-users
+                permissions:
+                    - itrail.econsal.manage_content
+            content_blocks:
+                label: Content Blocks
+                url: itrail/econsal/contentblocks
+                icon: icon-file-text-o
+                permissions:
+                    - itrail.econsal.manage_content

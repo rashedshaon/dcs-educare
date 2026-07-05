@@ -1,0 +1,27 @@
+{% set menuItems = items ?: [] %}
+<ul class="navbar-nav ms-auto align-items-lg-center">
+    {% if menuItems|length %}
+        {% for item in menuItems %}
+            <li class="nav-item {{ item.items ? 'dropdown' : '' }}">
+                <a class="nav-link {{ item.items ? 'dropdown-toggle' : '' }} {{ item.isActive ? 'active' : '' }}" href="{{ item.url ?: '#' }}" {% if item.items %}data-bs-toggle="dropdown" role="button" aria-expanded="false"{% endif %}>
+                    {{ item.title }}
+                </a>
+                {% if item.items %}
+                    <ul class="dropdown-menu">
+                        {% for child in item.items %}
+                            <li><a class="dropdown-item {{ child.isActive ? 'active' : '' }}" href="{{ child.url }}">{{ child.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% else %}
+        <li class="nav-item"><a class="nav-link" href="{{ 'home'|page }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ 'about'|page }}">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ 'student-services'|page }}">Student Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ 'study-abroad'|page }}">Study Abroad</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ 'blog'|page }}">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ 'gallery'|page }}">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ 'contact'|page }}">Contact Us</a></li>
+    {% endif %}
+</ul>

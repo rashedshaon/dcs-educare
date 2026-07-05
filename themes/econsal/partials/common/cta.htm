@@ -1,0 +1,14 @@
+{% if block %}
+<section class="cta-band">
+    <div class="container">
+        <div class="cta-inner">
+            <div>
+                {% if block.subtitle %}<p class="section-kicker">{{ block.subtitle }}</p>{% endif %}
+                <h2>{{ block.title }}</h2>
+                <div class="richtext">{{ block.content|raw }}</div>
+            </div>
+            {% if block.button_text and block.button_link %}<a class="btn btn-light" href="{{ block.button_link }}">{{ block.button_text }}</a>{% endif %}
+        </div>
+    </div>
+</section>
+{% endif %}

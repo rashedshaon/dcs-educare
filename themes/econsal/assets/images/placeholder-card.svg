@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Study destination">
+  <rect width="800" height="1000" fill="#e8f7f4"/>
+  <path d="M0 690c150-90 260-90 410 0s250 90 390 10v300H0z" fill="#0f766e"/>
+  <circle cx="590" cy="230" r="110" fill="#f59e0b"/>
+  <rect x="120" y="130" width="340" height="48" rx="24" fill="#102033" opacity=".85"/>
+  <rect x="120" y="210" width="240" height="34" rx="17" fill="#102033" opacity=".45"/>
+</svg>

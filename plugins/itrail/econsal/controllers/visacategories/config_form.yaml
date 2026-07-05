@@ -1,0 +1,10 @@
+name: Visa Category
+modelClass: ItRail\Econsal\Models\VisaCategory
+form: $/itrail/econsal/models/visacategory/fields.yaml
+defaultRedirect: itrail/econsal/visacategories
+create:
+    redirect: itrail/econsal/visacategories/update/:id
+    redirectClose: itrail/econsal/visacategories
+update:
+    redirect: itrail/econsal/visacategories
+    redirectClose: itrail/econsal/visacategories

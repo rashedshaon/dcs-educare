@@ -1,0 +1,10 @@
+name: Service
+modelClass: ItRail\Econsal\Models\Service
+form: $/itrail/econsal/models/service/fields.yaml
+defaultRedirect: itrail/econsal/services
+create:
+    redirect: itrail/econsal/services/update/:id
+    redirectClose: itrail/econsal/services
+update:
+    redirect: itrail/econsal/services
+    redirectClose: itrail/econsal/services

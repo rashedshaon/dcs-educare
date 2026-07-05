@@ -1,0 +1,10 @@
+title: Team Members
+modelClass: ItRail\Econsal\Models\TeamMember
+list: $/itrail/econsal/models/teammember/columns.yaml
+recordUrl: itrail/econsal/teammembers/update/:id
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

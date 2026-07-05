@@ -1,0 +1,229 @@
+tabs:
+    fields:
+        site_name:
+            label: Site name
+            tab: General
+            span: left
+        logo:
+            label: Logo
+            tab: General
+            type: fileupload
+            mode: image
+            imageHeight: 120
+            imageWidth: 240
+            span: right
+        favicon:
+            label: Favicon
+            tab: General
+            type: fileupload
+            mode: image
+            imageHeight: 64
+            imageWidth: 64
+            span: right
+        header_button_text:
+            label: Header button text
+            tab: General
+            span: left
+        header_button_link:
+            label: Header button link
+            tab: General
+            span: right
+        footer_short_description:
+            label: Footer short description
+            tab: General
+            type: textarea
+            size: small
+        copyright_text:
+            label: Copyright text
+            tab: General
+        enable_preloader:
+            label: Enable preloader
+            tab: General
+            type: switch
+            span: left
+        enable_sticky_header:
+            label: Enable sticky header
+            tab: General
+            type: switch
+            span: right
+        enable_whatsapp_button:
+            label: Enable WhatsApp floating button
+            tab: General
+            type: switch
+            span: left
+        enable_back_to_top:
+            label: Enable back-to-top button
+            tab: General
+            type: switch
+            span: right
+        primary_color:
+            label: Primary color
+            tab: Colors
+            type: colorpicker
+            span: left
+        secondary_color:
+            label: Secondary color
+            tab: Colors
+            type: colorpicker
+            span: right
+        accent_color:
+            label: Accent color
+            tab: Colors
+            type: colorpicker
+            span: left
+        text_color:
+            label: Text color
+            tab: Colors
+            type: colorpicker
+            span: right
+        button_color:
+            label: Button color
+            tab: Colors
+            type: colorpicker
+            span: left
+        font_import_url:
+            label: Font import URL
+            comment: Optional Google Fonts stylesheet URL. Keep blank to use system fonts only.
+            tab: Typography
+            default: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700;900&family=Nunito+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700;800;900&display=swap
+            span: full
+        body_font_family:
+            label: Body font family
+            tab: Typography
+            type: dropdown
+            span: left
+            options:
+                '"Plus Jakarta Sans", system-ui, sans-serif': Plus Jakarta Sans - premium clean
+                '"Inter", system-ui, sans-serif': Inter - modern UI
+                '"Manrope", system-ui, sans-serif': Manrope - professional
+                '"Nunito Sans", system-ui, sans-serif': Nunito Sans - friendly education
+                '"Source Sans 3", system-ui, sans-serif': Source Sans 3 - readable
+                'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif': System UI
+        heading_font_family:
+            label: Heading font family
+            tab: Typography
+            type: dropdown
+            span: right
+            options:
+                '"Plus Jakarta Sans", system-ui, sans-serif': Plus Jakarta Sans - premium clean
+                '"Manrope", system-ui, sans-serif': Manrope - executive
+                '"Poppins", system-ui, sans-serif': Poppins - bold modern
+                '"Inter", system-ui, sans-serif': Inter - modern UI
+                '"Playfair Display", Georgia, serif': Playfair Display - elegant serif
+                '"Merriweather", Georgia, serif': Merriweather - editorial serif
+        base_font_size:
+            label: Base font size
+            comment: CSS value, for example 16px or 17px.
+            tab: Typography
+            default: 16px
+            span: left
+        heading_font_weight:
+            label: Heading font weight
+            tab: Typography
+            type: dropdown
+            default: 800
+            span: right
+            options:
+                700: 700 - Bold
+                800: 800 - Extra bold
+                900: 900 - Black
+        phone_numbers:
+            label: Phone numbers
+            comment: One phone number per line.
+            tab: Contact
+            type: textarea
+            size: small
+            span: left
+        emails:
+            label: Emails
+            comment: One email per line.
+            tab: Contact
+            type: textarea
+            size: small
+            span: right
+        office_addresses:
+            label: Office addresses
+            comment: One address per line.
+            tab: Contact
+            type: textarea
+            size: small
+        google_map_embed_url:
+            label: Google Map embed URL
+            tab: Contact
+        office_hours:
+            label: Office hours
+            tab: Contact
+            type: textarea
+            size: tiny
+            span: left
+        whatsapp_number:
+            label: WhatsApp number
+            tab: Contact
+            span: right
+        emergency_cta_text:
+            label: Emergency/contact CTA text
+            tab: Contact
+            span: left
+        footer_contact_info:
+            label: Footer contact info
+            tab: Contact
+            type: textarea
+            size: tiny
+            span: right
+        facebook_url:
+            label: Facebook
+            tab: Social
+            span: left
+        instagram_url:
+            label: Instagram
+            tab: Social
+            span: right
+        linkedin_url:
+            label: LinkedIn
+            tab: Social
+            span: left
+        youtube_url:
+            label: YouTube
+            tab: Social
+            span: right
+        tiktok_url:
+            label: TikTok
+            tab: Social
+            span: left
+        twitter_url:
+            label: X/Twitter
+            tab: Social
+            span: right
+        custom_social_links:
+            label: Custom social links
+            tab: Social
+            type: repeater
+            prompt: Add social link
+            form:
+                fields:
+                    label:
+                        label: Label
+                        span: left
+                    url:
+                        label: URL
+                        span: right
+        meta_title:
+            label: Default meta title
+            tab: SEO
+            span: left
+        meta_description:
+            label: Default meta description
+            tab: SEO
+            type: textarea
+            size: tiny
+            span: right
+        meta_keywords:
+            label: Default meta keywords
+            tab: SEO
+            span: left
+        og_image:
+            label: Default OG image
+            tab: SEO
+            type: fileupload
+            mode: image
+            span: right
