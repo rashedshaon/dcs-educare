@@ -29,6 +29,7 @@ class Plugin extends PluginBase
             \ItRail\Econsal\Components\InfoBlock::class => 'infoBlock',
             \ItRail\Econsal\Components\RequiredDocuments::class => 'requiredDocuments',
             \ItRail\Econsal\Components\CountriesList::class => 'countriesList',
+            \ItRail\Econsal\Components\CountryDetails::class => 'countryDetails',
             \ItRail\Econsal\Components\VisaCategoryList::class => 'visaCategoryList',
             \ItRail\Econsal\Components\ServicesAccordion::class => 'servicesAccordion',
             \ItRail\Econsal\Components\SuccessStudents::class => 'successStudents',

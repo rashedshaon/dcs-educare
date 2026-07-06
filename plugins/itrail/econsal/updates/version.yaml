@@ -8,3 +8,6 @@ v1.0.2:
 v1.0.3:
     - Add YouTube URL support to content blocks.
     - add_content_block_youtube_url.php
+v1.0.4:
+    - Add country detail pages and preload study destination content.
+    - add_country_details.php

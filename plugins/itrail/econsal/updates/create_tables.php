@@ -29,7 +29,9 @@ class CreateTables extends Migration
         Schema::create('itrail_econsal_countries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug')->nullable();
             $table->text('short_description')->nullable();
+            $table->mediumText('content')->nullable();
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
             $table->integer('sort_order')->default(0);

@@ -14,7 +14,7 @@
                         <div class="image-card-content">
                             <h3>{{ country.name }}</h3>
                             <p>{{ country.short_description }}</p>
-                            {% if country.button_text and country.button_link %}<a href="{{ country.button_link }}">{{ country.button_text }} <i class="bi bi-arrow-right"></i></a>{% endif %}
+                            <a href="{{ 'country-details'|page({ slug: country.slug }) }}">Learn More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </article>
                 </div>

@@ -10,12 +10,22 @@ tabs:
             required: true
             tab: Content
             span: left
+        slug:
+            label: Slug
+            tab: Content
+            span: right
+            preset:
+                field: name
+                type: slug
         short_description:
             label: Short description
             type: textarea
             size: small
             tab: Content
-            span: right
+        content:
+            label: Description
+            type: richeditor
+            tab: Content
         image:
             label: Country image
             type: fileupload
@@ -26,14 +36,6 @@ tabs:
             label: Flag image
             type: fileupload
             mode: image
-            tab: Content
-            span: right
-        button_text:
-            label: Button text
-            tab: Content
-            span: left
-        button_link:
-            label: Button link
             tab: Content
             span: right
         sort_order:

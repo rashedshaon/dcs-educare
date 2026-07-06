@@ -2,6 +2,9 @@ columns:
     name:
         label: Country
         searchable: true
+    slug:
+        label: Slug
+        searchable: true
     is_active:
         label: Active
         type: switch
