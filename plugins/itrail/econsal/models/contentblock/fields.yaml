@@ -27,6 +27,11 @@ tabs:
             mode: image
             tab: Content
             span: left
+        youtube_url:
+            label: YouTube video URL
+            comment: If provided, this video is shown instead of the image.
+            tab: Content
+            span: right
         button_text:
             label: Button text
             tab: Content

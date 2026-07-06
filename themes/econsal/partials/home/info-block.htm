@@ -4,7 +4,11 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
                 <div class="video-panel">
-                    {% if infoBlock.image %}
+                    {% if infoBlock.youtube_embed_url %}
+                        <div class="ratio ratio-16x9">
+                            <iframe src="{{ infoBlock.youtube_embed_url }}" title="{{ infoBlock.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    {% elseif infoBlock.image %}
                         <img src="{{ infoBlock.image.path }}" alt="{{ infoBlock.title }}" loading="lazy">
                     {% else %}
                         <div class="ratio ratio-16x9 bg-soft d-flex align-items-center justify-content-center"><i class="bi bi-play-circle"></i></div>

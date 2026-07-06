@@ -23,7 +23,7 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 .video-play { align-items: center; background: #fff; border: 0; border-radius: 50%; color: var(--ec-primary); display: inline-flex; height: 58px; justify-content: center; width: 58px; }
 .video-play.small { height: 48px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 48px; }
 .video-modal .modal-content { background: #000; border: 0; border-radius: 8px; overflow: hidden; }
-.video-modal iframe { border: 0; }
+.video-modal iframe, .video-panel iframe { border: 0; }
 .video-modal-close { background-color: #fff; border-radius: 50%; opacity: 1; position: absolute; right: -14px; top: -14px; z-index: 2; }
 .bg-light-blue { background: #eef7fb; }
 .bg-cream { background: #fff7e6; }

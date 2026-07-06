@@ -30,7 +30,7 @@ tabs:
             span: right
         icon_class:
             label: Icon class
-            comment: Example: bi bi-passport
+            comment: "Example: bi bi-passport"
             tab: Content
             span: left
         button_text:

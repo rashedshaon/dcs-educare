@@ -100,6 +100,7 @@ class CreateTables extends Migration
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
             $table->mediumText('content')->nullable();
+            $table->string('youtube_url')->nullable();
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
             $table->integer('sort_order')->default(0);
