@@ -3,10 +3,10 @@ a { color: var(--ec-primary); text-decoration: none; }
 h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weight: var(--ec-heading-weight); letter-spacing: 0; line-height: 1.12; }
 .site-header { background: #fff; box-shadow: 0 8px 30px rgba(15, 23, 42, .06); z-index: 1020; }
 .site-header.is-sticky { position: sticky; top: 0; }
-.navbar-brand { align-items: center; display: inline-flex; gap: .75rem; margin-right: 2rem; }
+.navbar-brand { align-items: center; display: inline-flex; gap: .75rem; margin-right: 2rem; min-width: 0; }
 .site-logo { max-height: 54px; max-width: 190px; object-fit: contain; }
 .navbar-brand span, .footer-brand { color: var(--ec-primary); font-size: 1.45rem; font-weight: 900; }
-.navbar-brand .brand-copy { display: flex; flex-direction: column; line-height: 1.05; }
+.navbar-brand .brand-copy { display: flex; flex-direction: column; line-height: 1.05; min-width: 0; }
 .navbar-brand .brand-copy strong { color: #102033; font-size: 1.05rem; font-weight: 900; }
 .navbar-brand .brand-copy small { color: #64748b; font-size: .72rem; font-weight: 700; letter-spacing: .04em; margin-top: .18rem; text-transform: uppercase; }
 .navbar .navbar-nav { gap: .35rem; }
@@ -25,11 +25,15 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 .hero-content .section-kicker { color: var(--hero-subtitle-color, var(--ec-accent)); }
 .hero-content .btn-outline-light { border-color: rgba(15, 23, 42, .18); color: #233142; text-shadow: none; }
 .hero-content .btn-outline-light:hover { background: #fff; border-color: #fff; color: #102033; }
-.video-play { align-items: center; background: #fff; border: 0; border-radius: 50%; color: var(--ec-primary); display: inline-flex; height: 58px; justify-content: center; width: 58px; }
+.video-play { align-items: center; background: #ff0000; border: 0; border-radius: 50%; box-shadow: 0 14px 30px rgba(255, 0, 0, .28); color: #fff; display: inline-flex; height: 58px; justify-content: center; width: 58px; }
+.video-play:hover { background: #cc0000; color: #fff; }
 .video-play.small { height: 48px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 48px; }
 .video-modal .modal-content { background: #000; border: 0; border-radius: 8px; overflow: hidden; }
 .video-modal iframe, .video-panel iframe { border: 0; }
 .video-modal-close { background-color: #fff; border-radius: 50%; opacity: 1; position: absolute; right: -14px; top: -14px; z-index: 2; }
+.map-frame { border-radius: 8px; overflow: hidden; }
+.map-frame iframe { border: 0; }
+.map-link { color: var(--ec-primary); display: inline-block; font-weight: 800; margin-top: 12px; }
 .bg-light-blue { background: #eef7fb; }
 .bg-cream { background: #fff7e6; }
 .bg-dark-ec { background: #102033; }
@@ -71,9 +75,15 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 .timeline-grid { display: grid; gap: 22px; grid-template-columns: repeat(4, 1fr); }
 .timeline-grid div { background: #fff; border-radius: 8px; padding: 26px; }
 .timeline-grid span { color: var(--ec-accent); font-size: 2rem; font-weight: 900; }
-.team-card img { aspect-ratio: 1/1; object-fit: cover; width: 100%; }
-.team-card-body span { color: #64748b; display: block; font-size: .94rem; }
-.team-social { display: flex; gap: 12px; margin-top: 16px; }
+.team-card { display: flex; flex-direction: column; height: 100%; }
+.team-card img, .team-avatar { aspect-ratio: 1/1; flex: 0 0 auto; width: 100%; }
+.team-card img { object-fit: cover; }
+.team-avatar { align-items: center; background: linear-gradient(135deg, #eef7fb, #e8f7f4); color: var(--ec-primary); display: flex; font-size: clamp(4.4rem, 8vw, 6rem); font-weight: 900; justify-content: center; text-transform: uppercase; }
+.team-card-body { display: flex; flex: 1; flex-direction: column; }
+.team-card-body h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); margin-bottom: .45rem; }
+.team-card-body p { color: #102033; font-size: 1rem; line-height: 1.45; margin-bottom: .65rem; }
+.team-card-body span { color: #64748b; display: block; font-size: .9rem; }
+.team-social { display: flex; gap: 12px; margin-top: auto; padding-top: 16px; }
 .blog-card img { aspect-ratio: 16/10; }
 .blog-card h2, .blog-card h3 { font-size: 1.25rem; }
 .blog-card time, .read-more { color: var(--ec-primary); font-weight: 800; }
@@ -101,7 +111,8 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 .ec-preloader.is-hidden { display: none; }
 @media (max-width: 991.98px) {
     .section-pad { padding: 64px 0; }
-    .navbar-brand .brand-copy { display: none; }
+    .navbar-brand .brand-copy strong { font-size: .96rem; }
+    .navbar-brand .brand-copy small { font-size: .64rem; }
     .hero-slide { background-position: 60% center; min-height: 590px; }
     .hero-content { max-width: 560px; }
     .timeline-grid { grid-template-columns: repeat(2, 1fr); }
@@ -110,6 +121,9 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 @media (max-width: 575.98px) {
     .navbar-brand { margin-right: 0; }
     .site-logo { max-height: 48px; max-width: 140px; }
+    .navbar-brand { gap: .55rem; max-width: calc(100% - 64px); }
+    .navbar-brand .brand-copy strong { font-size: .85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .navbar-brand .brand-copy small { font-size: .56rem; letter-spacing: .02em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .hero-slide { align-items: flex-start; background-position: 58% center; min-height: 494px; }
     .hero-slide::before { background: linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 50%, rgba(255,255,255,.18) 78%); }
     .hero-content { background: rgba(255,255,255,.72); border-radius: 8px; margin-top: 32px; max-width: min(86vw, 340px); padding: 18px 14px; text-shadow: none; }
@@ -119,6 +133,9 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
     .hero-content .btn { padding: .68rem .85rem; }
     .hero-content .d-flex { gap: .65rem !important; }
     .video-play { height: 46px; width: 46px; }
+    .team-card-body { padding: 20px; }
+    .team-card-body h3 { font-size: 1.28rem; }
+    .team-card-body p { font-size: .94rem; }
     .appointment-card, .feature-tile, .contact-panel { padding: 24px; }
     .timeline-grid { grid-template-columns: 1fr; }
 }

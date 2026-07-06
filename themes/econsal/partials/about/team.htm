@@ -9,7 +9,11 @@
             {% for member in teamMembers %}
                 <div class="col-sm-6 col-lg-3">
                     <article class="team-card">
-                        <img src="{{ member.image ? member.image.path : ('assets/images/placeholder-portrait.svg'|theme) }}" alt="{{ member.name }}" loading="lazy">
+                        {% if member.image %}
+                            <img src="{{ member.image.path }}" alt="{{ member.name }}" loading="lazy">
+                        {% else %}
+                            <div class="team-avatar" aria-hidden="true">{{ member.name|slice(0, 1) }}</div>
+                        {% endif %}
                         <div class="team-card-body">
                             <h3>{{ member.name }}</h3>
                             <p>{{ member.designation }}</p>

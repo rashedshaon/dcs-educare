@@ -24,9 +24,17 @@ var = "contactIntro"
             </div>
         </div>
         {% if settings.google_map_embed_url %}
+            {% set mapUrl = settings.google_map_embed_url %}
+            {% if 'google.com/maps' not in mapUrl %}
+                {% set mapQuery = settings.office_addresses ?: settings.site_name %}
+                {% set mapUrl = 'https://maps.google.com/maps?q=' ~ mapQuery|url_encode ~ '&output=embed' %}
+            {% elseif 'output=embed' not in mapUrl and '/embed' not in mapUrl %}
+                {% set mapUrl = mapUrl ~ ('?' in mapUrl ? '&output=embed' : '?output=embed') %}
+            {% endif %}
             <div class="ratio ratio-21x9 map-frame mt-5">
-                <iframe src="{{ settings.google_map_embed_url }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Office map"></iframe>
+                <iframe src="{{ mapUrl }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Office map"></iframe>
             </div>
+            <a class="map-link" href="{{ settings.google_map_embed_url }}" target="_blank" rel="noopener">Open in Google Maps</a>
         {% endif %}
     </div>
 </section>
