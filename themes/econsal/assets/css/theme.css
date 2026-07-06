@@ -3,8 +3,12 @@ a { color: var(--ec-primary); text-decoration: none; }
 h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weight: var(--ec-heading-weight); letter-spacing: 0; line-height: 1.12; }
 .site-header { background: #fff; box-shadow: 0 8px 30px rgba(15, 23, 42, .06); z-index: 1020; }
 .site-header.is-sticky { position: sticky; top: 0; }
+.navbar-brand { align-items: center; display: inline-flex; gap: .75rem; margin-right: 2rem; }
 .site-logo { max-height: 54px; max-width: 190px; object-fit: contain; }
 .navbar-brand span, .footer-brand { color: var(--ec-primary); font-size: 1.45rem; font-weight: 900; }
+.navbar-brand .brand-copy { display: flex; flex-direction: column; line-height: 1.05; }
+.navbar-brand .brand-copy strong { color: #102033; font-size: 1.05rem; font-weight: 900; }
+.navbar-brand .brand-copy small { color: #64748b; font-size: .72rem; font-weight: 700; letter-spacing: .04em; margin-top: .18rem; text-transform: uppercase; }
 .navbar .navbar-nav { gap: .35rem; }
 .navbar .nav-link { color: #233142; font-size: .96rem; font-weight: 700; padding: .85rem .9rem; }
 .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--ec-primary); }
@@ -14,7 +18,8 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 .section-head { max-width: 720px; margin: 0 auto 38px; text-align: center; }
 .section-kicker { color: var(--ec-accent); font-weight: 900; letter-spacing: .08em; margin-bottom: .65rem; text-transform: uppercase; }
 .hero-slide { align-items: center; background-position: center; background-size: cover; display: flex; min-height: 680px; position: relative; }
-.hero-content { color: var(--hero-description-color, #334155); max-width: 760px; padding: 80px 0; position: relative; text-shadow: 0 2px 16px rgba(255,255,255,.78); }
+.hero-slide::before { background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.82) 36%, rgba(255,255,255,.08) 68%); content: ""; inset: 0; pointer-events: none; position: absolute; }
+.hero-content { color: var(--hero-description-color, #334155); max-width: 760px; padding: 80px 0; position: relative; text-shadow: 0 2px 16px rgba(255,255,255,.78); z-index: 1; }
 .hero-content h1 { color: var(--hero-title-color, #102033); font-size: clamp(2.5rem, 7vw, 5.4rem); }
 .hero-content p { color: var(--hero-description-color, #334155); font-size: 1.15rem; max-width: 650px; }
 .hero-content .section-kicker { color: var(--hero-subtitle-color, var(--ec-accent)); }
@@ -96,12 +101,24 @@ h1, h2, h3, h4 { color: #102033; font-family: var(--ec-heading-font); font-weigh
 .ec-preloader.is-hidden { display: none; }
 @media (max-width: 991.98px) {
     .section-pad { padding: 64px 0; }
-    .hero-slide { min-height: 590px; }
+    .navbar-brand .brand-copy { display: none; }
+    .hero-slide { background-position: 60% center; min-height: 590px; }
+    .hero-content { max-width: 560px; }
     .timeline-grid { grid-template-columns: repeat(2, 1fr); }
     .cta-inner, .footer-bottom { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 575.98px) {
-    .hero-slide { min-height: 540px; }
+    .navbar-brand { margin-right: 0; }
+    .site-logo { max-height: 48px; max-width: 140px; }
+    .hero-slide { align-items: flex-start; background-position: 58% center; min-height: 494px; }
+    .hero-slide::before { background: linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 50%, rgba(255,255,255,.18) 78%); }
+    .hero-content { background: rgba(255,255,255,.72); border-radius: 8px; margin-top: 32px; max-width: min(86vw, 340px); padding: 18px 14px; text-shadow: none; }
+    .hero-content .section-kicker { font-size: .78rem; letter-spacing: .05em; line-height: 1.35; margin-bottom: .45rem; }
+    .hero-content h1 { font-size: clamp(2rem, 10vw, 2.55rem); line-height: 1.08; margin-bottom: .7rem; }
+    .hero-content p { font-size: .98rem; line-height: 1.55; margin-bottom: 1rem; }
+    .hero-content .btn { padding: .68rem .85rem; }
+    .hero-content .d-flex { gap: .65rem !important; }
+    .video-play { height: 46px; width: 46px; }
     .appointment-card, .feature-tile, .contact-panel { padding: 24px; }
     .timeline-grid { grid-template-columns: 1fr; }
 }

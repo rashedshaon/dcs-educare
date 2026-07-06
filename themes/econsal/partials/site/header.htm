@@ -4,6 +4,10 @@
             <a class="navbar-brand" href="{{ 'home'|page }}" aria-label="{{ settings.site_name ?: 'Econsal' }}">
                 {% if settings.logo %}
                     <img src="{{ settings.logo.path }}" alt="{{ settings.site_name ?: 'Econsal' }}" class="site-logo">
+                    <span class="brand-copy">
+                        <strong>{{ settings.site_name ?: 'Econsal' }}</strong>
+                        <small>Education Consultancy</small>
+                    </span>
                 {% else %}
                     <span>{{ settings.site_name ?: 'Econsal' }}</span>
                 {% endif %}
