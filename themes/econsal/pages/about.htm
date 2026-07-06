@@ -13,7 +13,15 @@ var = "aboutIntro"
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
-                {% if aboutIntro.image %}<img class="rounded-img" src="{{ aboutIntro.image.path }}" alt="{{ aboutIntro.title }}" loading="lazy">{% endif %}
+                <div class="video-panel">
+                    {% if aboutIntro.youtube_embed_url %}
+                        <div class="ratio ratio-16x9">
+                            <iframe src="{{ aboutIntro.youtube_embed_url }}" title="{{ aboutIntro.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    {% elseif aboutIntro.image %}
+                        <img class="rounded-img" src="{{ aboutIntro.image.path }}" alt="{{ aboutIntro.title }}" loading="lazy">
+                    {% endif %}
+                </div>
             </div>
             <div class="col-lg-6">
                 <p class="section-kicker">{{ aboutIntro.subtitle }}</p>
