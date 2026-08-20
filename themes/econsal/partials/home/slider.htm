@@ -8,7 +8,11 @@
                         <div class="container position-relative">
                             <div class="hero-content">
                                 {% if slide.subtitle %}<p class="section-kicker">{{ slide.subtitle }}</p>{% endif %}
-                                <h1>{{ slide.title }}</h1>
+                                {% if loop.first %}
+                                    <h1 class="hero-title">{{ slide.title }}</h1>
+                                {% else %}
+                                    <h2 class="hero-title">{{ slide.title }}</h2>
+                                {% endif %}
                                 {% if slide.description %}<p>{{ slide.description }}</p>{% endif %}
                                 <div class="d-flex flex-wrap gap-3 align-items-center">
                                     {% if slide.primary_button_text and slide.primary_button_link %}<a class="btn btn-ec" href="{{ slide.primary_button_link }}">{{ slide.primary_button_text }}</a>{% endif %}

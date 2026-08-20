@@ -1,6 +1,7 @@
 <?php namespace ItRail\Econsal\Components;
 
 use Cms\Classes\ComponentBase;
+use Cms;
 use ItRail\Econsal\Models\Settings;
 
 class SiteSettings extends ComponentBase
@@ -18,5 +19,6 @@ class SiteSettings extends ComponentBase
         $this->page['addresses'] = Settings::listAddresses();
         $this->page['socialLinks'] = array_merge(Settings::socialLinks(), Settings::customSocialLinks());
         $this->page['whatsappLink'] = Settings::whatsAppLink();
+        $this->page['canonicalUrl'] = Cms::fullUrl(request()->path() === '/' ? null : request()->path());
     }
 }

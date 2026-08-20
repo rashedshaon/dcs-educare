@@ -1,5 +1,8 @@
 <?php namespace ItRail\Econsal;
 
+use Cms\Classes\Page;
+use Event;
+use Response;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -35,7 +38,29 @@ class Plugin extends PluginBase
             \ItRail\Econsal\Components\SuccessStudents::class => 'successStudents',
             \ItRail\Econsal\Components\TeamMembers::class => 'teamMembers',
             \ItRail\Econsal\Components\ContentBlock::class => 'contentBlock',
+            \ItRail\Econsal\Components\DynamicSitemap::class => 'dynamicSitemap',
         ];
+    }
+
+    public function boot()
+    {
+        Event::listen('cms.page.display', function ($controller, $url, $page, $result) {
+            if (!$page instanceof Page || !is_string($result)) {
+                return;
+            }
+
+            $contentTypes = [
+                'robots' => 'text/plain; charset=UTF-8',
+                'sitemap' => 'application/xml; charset=UTF-8',
+            ];
+
+            $pageName = $page->getBaseFileName();
+            if (isset($contentTypes[$pageName])) {
+                return Response::make($result, 200, [
+                    'Content-Type' => $contentTypes[$pageName],
+                ]);
+            }
+        });
     }
 
     public function registerSettings()

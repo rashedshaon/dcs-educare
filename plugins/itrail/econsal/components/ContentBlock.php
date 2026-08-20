@@ -25,6 +25,12 @@ class ContentBlock extends ComponentBase
                 'default' => 'contentBlock',
                 'type' => 'string',
             ],
+            'applySeo' => [
+                'title' => 'Use block SEO fields',
+                'description' => 'Applies this block SEO data to the current page.',
+                'default' => false,
+                'type' => 'checkbox',
+            ],
         ];
     }
 
@@ -32,6 +38,14 @@ class ContentBlock extends ComponentBase
     {
         $code = $this->property('code');
         $var = $this->property('var') ?: 'contentBlock';
-        $this->page[$var] = ContentBlockModel::where('code', $code)->active()->with('image')->first();
+        $block = ContentBlockModel::where('code', $code)->active()->with(['image', 'og_image'])->first();
+        $this->page[$var] = $block;
+
+        if ($block && $this->property('applySeo')) {
+            $this->page['meta_title'] = $block->meta_title ?: $block->title;
+            $this->page['meta_description'] = $block->meta_description ?: $block->subtitle;
+            $this->page['meta_keywords'] = $block->meta_keywords;
+            $this->page['seo_og_image'] = $block->og_image ? $block->og_image->getPath() : null;
+        }
     }
 }

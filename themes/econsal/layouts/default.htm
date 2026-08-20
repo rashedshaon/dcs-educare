@@ -12,14 +12,28 @@ code = "footer-menu"
 <!doctype html>
 <html lang="en">
 <head>
+    {% set seoTitle = meta_title ?: (post ? post.title : (this.page.meta_title ?: settings.meta_title ?: this.page.title ?: settings.site_name)) %}
+    {% set seoDescription = meta_description ?: (post ? (post.excerpt ?: post.summary)|striptags : (this.page.meta_description ?: settings.meta_description ?: settings.footer_short_description)) %}
+    {% set seoImage = seo_og_image ?: (post and post.featured_images.count ? post.featured_images.first.path : (settings.og_image ? settings.og_image.path : null)) %}
+    {% set googleSiteVerification = settings.google_site_verification ?: 'QXV-zPiy5LPvspGYcGYyrDjpPNczc7-Ea4pQumPRQZk' %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ this.page.meta_title ?: this.page.title ?: settings.site_name }}</title>
-    <meta name="description" content="{{ this.page.meta_description ?: settings.meta_description }}">
-    <meta name="keywords" content="{{ this.page.meta_keywords ?: settings.meta_keywords }}">
-    <meta property="og:title" content="{{ this.page.meta_title ?: this.page.title ?: settings.site_name }}">
-    <meta property="og:description" content="{{ this.page.meta_description ?: settings.meta_description }}">
-    {% if settings.og_image %}<meta property="og:image" content="{{ settings.og_image.path }}">{% endif %}
+    {% if googleSiteVerification %}<meta name="google-site-verification" content="{{ googleSiteVerification }}">{% endif %}
+    <title>{{ seoTitle }}</title>
+    {% if seoDescription %}<meta name="description" content="{{ seoDescription|trim|slice(0, 160) }}">{% endif %}
+    {% if meta_keywords ?: this.page.meta_keywords ?: settings.meta_keywords %}<meta name="keywords" content="{{ meta_keywords ?: this.page.meta_keywords ?: settings.meta_keywords }}">{% endif %}
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+    <meta property="og:title" content="{{ seoTitle }}">
+    {% if seoDescription %}<meta property="og:description" content="{{ seoDescription|trim|slice(0, 200) }}">{% endif %}
+    <meta property="og:type" content="{{ post ? 'article' : 'website' }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    {% if settings.site_name %}<meta property="og:site_name" content="{{ settings.site_name }}">{% endif %}
+    {% if seoImage %}<meta property="og:image" content="{{ seoImage|app }}">{% endif %}
+    <meta name="twitter:card" content="{{ seoImage ? 'summary_large_image' : 'summary' }}">
+    <meta name="twitter:title" content="{{ seoTitle }}">
+    {% if seoDescription %}<meta name="twitter:description" content="{{ seoDescription|trim|slice(0, 200) }}">{% endif %}
+    {% if seoImage %}<meta name="twitter:image" content="{{ seoImage|app }}">{% endif %}
     {% if settings.favicon %}<link rel="icon" href="{{ settings.favicon.path }}">{% endif %}
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     {% set fontImportUrl = settings.font_import_url ?: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700;900&family=Nunito+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700;800;900&display=swap' %}

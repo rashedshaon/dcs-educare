@@ -227,3 +227,9 @@ tabs:
             type: fileupload
             mode: image
             span: right
+        google_site_verification:
+            label: Google site verification
+            comment: Enter only the content token supplied by Google Search Console, not the full meta tag.
+            tab: SEO
+            default: QXV-zPiy5LPvspGYcGYyrDjpPNczc7-Ea4pQumPRQZk
+            span: full

@@ -1,0 +1,11 @@
+title = "Robots"
+url = "/robots.txt"
+
+[dynamicSitemap]
+==
+User-agent: *
+Allow: /
+Disallow: {{ backendPath }}
+Disallow: /vendor/
+
+Sitemap: {{ sitemapUrl }}

@@ -39,6 +39,7 @@ class Settings extends Model
         $this->enable_sticky_header = true;
         $this->enable_whatsapp_button = true;
         $this->enable_back_to_top = true;
+        $this->google_site_verification = 'QXV-zPiy5LPvspGYcGYyrDjpPNczc7-Ea4pQumPRQZk';
     }
 
     public static function listPhones(): array

@@ -27,7 +27,7 @@ class CountryDetails extends ComponentBase
     {
         $country = Country::active()
             ->where('slug', $this->property('slug'))
-            ->with(['image', 'flag_image'])
+            ->with(['image', 'flag_image', 'og_image'])
             ->first();
 
         if (!$country) {
@@ -39,5 +39,8 @@ class CountryDetails extends ComponentBase
         $this->page['meta_title'] = $country->meta_title ?: $country->name;
         $this->page['meta_description'] = $country->meta_description ?: $country->short_description;
         $this->page['meta_keywords'] = $country->meta_keywords;
+        $this->page['seo_og_image'] = $country->og_image
+            ? $country->og_image->getPath()
+            : ($country->image ? $country->image->getPath() : null);
     }
 }

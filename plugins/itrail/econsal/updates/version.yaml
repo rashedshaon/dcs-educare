@@ -14,3 +14,7 @@ v1.0.4:
 v1.0.5:
     - Populate team members and success students.
     - populate_team_and_success_students.php
+v1.0.6:
+    - Add dynamic sitemap, crawler directives, and improved page metadata.
+v1.0.7:
+    - Add configurable Google Search Console site verification.
