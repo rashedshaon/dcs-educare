@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse">
                 {% partial 'site/nav' items=mainMenu.menuItems %}
                 {% if settings.header_button_text and settings.header_button_link %}
-                    <a class="btn btn-ec ms-lg-3" href="{{ settings.header_button_link }}">{{ settings.header_button_text }}</a>
+                    <a class="btn btn-ec ms-lg-3" href="{{ settings.header_button_link }}" data-track-cta="header">{{ settings.header_button_text }}</a>
                 {% endif %}
             </div>
         </div>

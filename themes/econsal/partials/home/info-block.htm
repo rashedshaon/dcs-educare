@@ -6,7 +6,7 @@
                 <div class="video-panel">
                     {% if infoBlock.youtube_embed_url %}
                         <div class="ratio ratio-16x9">
-                            <iframe src="{{ infoBlock.youtube_embed_url }}" title="{{ infoBlock.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="{{ infoBlock.youtube_embed_url }}{{ '?' in infoBlock.youtube_embed_url ? '&' : '?' }}enablejsapi=1" title="{{ infoBlock.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                         </div>
                     {% elseif infoBlock.image %}
                         <img src="{{ infoBlock.image.path }}" alt="{{ infoBlock.title }}" loading="lazy">

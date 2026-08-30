@@ -17,6 +17,21 @@ code = "footer-menu"
     {% set seoImage = seo_og_image ?: (post and post.featured_images.count ? post.featured_images.first.path : (settings.og_image ? settings.og_image.path : null)) %}
     {% set googleSiteVerification = settings.google_site_verification ?: 'QXV-zPiy5LPvspGYcGYyrDjpPNczc7-Ea4pQumPRQZk' %}
     <meta charset="utf-8">
+    {% if gtmContainerId %}
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                site_name: {{ (settings.site_name ?: 'Econsal')|json_encode|raw }},
+                page_type: {{ this.page.id|json_encode|raw }},
+                page_title: {{ seoTitle|json_encode|raw }}
+            });
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer',{{ gtmContainerId|json_encode|raw }});
+        </script>
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if googleSiteVerification %}<meta name="google-site-verification" content="{{ googleSiteVerification }}">{% endif %}
     <title>{{ seoTitle }}</title>
@@ -60,7 +75,10 @@ code = "footer-menu"
     </style>
     {% styles %}
 </head>
-<body>
+<body data-page-type="{{ this.page.id }}" data-page-title="{{ seoTitle }}">
+    {% if gtmContainerId %}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ gtmContainerId }}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+    {% endif %}
     {% if settings.enable_preloader %}
         <div id="preloader" class="ec-preloader"><div class="spinner-border text-light" role="status" aria-label="Loading"></div></div>
     {% endif %}
@@ -74,14 +92,14 @@ code = "footer-menu"
     {% partial 'site/footer' %}
 
     {% if settings.enable_whatsapp_button and whatsappLink %}
-        <a class="floating-whatsapp" href="{{ whatsappLink }}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a class="floating-whatsapp" href="{{ whatsappLink }}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-track-cta="floating_button"><i class="bi bi-whatsapp"></i></a>
     {% endif %}
     {% if settings.enable_back_to_top %}
         <button class="back-to-top" type="button" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
     {% endif %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ 'assets/js/theme.js'|theme }}"></script>
+    <script src="{{ 'assets/js/theme.js'|theme }}" data-gtm-enabled="{{ gtmContainerId ? 'true' : 'false' }}"></script>
     {% framework extras %}
     {% scripts %}
 </body>

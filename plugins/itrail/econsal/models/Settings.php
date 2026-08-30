@@ -1,16 +1,24 @@
 <?php namespace ItRail\Econsal\Models;
 
 use Model;
+use October\Rain\Database\Traits\Validation;
 use System\Behaviors\SettingsModel;
 use System\Models\File;
 
 class Settings extends Model
 {
+    use Validation;
+
     public $implement = [SettingsModel::class];
 
     public $settingsCode = 'itrail_econsal_settings';
 
     public $settingsFields = 'fields.yaml';
+
+    public $rules = [
+        'enable_gtm' => ['boolean'],
+        'gtm_container_id' => ['nullable', 'required_if:enable_gtm,1', 'regex:/^GTM-[A-Z0-9]+$/i'],
+    ];
 
     public $attachOne = [
         'logo' => File::class,
@@ -39,7 +47,19 @@ class Settings extends Model
         $this->enable_sticky_header = true;
         $this->enable_whatsapp_button = true;
         $this->enable_back_to_top = true;
+        $this->enable_gtm = false;
         $this->google_site_verification = 'QXV-zPiy5LPvspGYcGYyrDjpPNczc7-Ea4pQumPRQZk';
+    }
+
+    public static function gtmContainerId(): ?string
+    {
+        if (!self::get('enable_gtm')) {
+            return null;
+        }
+
+        $containerId = strtoupper(trim((string) self::get('gtm_container_id')));
+
+        return preg_match('/^GTM-[A-Z0-9]+$/', $containerId) ? $containerId : null;
     }
 
     public static function listPhones(): array

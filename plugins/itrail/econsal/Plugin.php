@@ -68,7 +68,7 @@ class Plugin extends PluginBase
         return [
             'settings' => [
                 'label' => 'Econsal Settings',
-                'description' => 'Manage site branding, colors, contact details, and social links.',
+                'description' => 'Manage site branding, analytics, colors, contact details, and social links.',
                 'category' => 'Econsal',
                 'icon' => 'icon-cog',
                 'class' => \ItRail\Econsal\Models\Settings::class,

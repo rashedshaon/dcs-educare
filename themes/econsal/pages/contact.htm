@@ -21,7 +21,7 @@ applySeo = 1
                 <h2>{{ contactIntro.title }}</h2>
                 <div class="richtext">{{ contactIntro.content|raw }}</div>
                 {% partial 'site/contact-info' %}
-                {% if whatsappLink %}<a class="btn btn-ec mt-3" href="{{ whatsappLink }}" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>{% endif %}
+                {% if whatsappLink %}<a class="btn btn-ec mt-3" href="{{ whatsappLink }}" target="_blank" rel="noopener" data-track-cta="contact_page"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>{% endif %}
             </div>
         </div>
         {% if settings.google_map_embed_url %}
@@ -35,7 +35,7 @@ applySeo = 1
             <div class="ratio ratio-21x9 map-frame mt-5">
                 <iframe src="{{ mapUrl }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Office map"></iframe>
             </div>
-            <a class="map-link" href="{{ settings.google_map_embed_url }}" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a class="map-link" href="{{ settings.google_map_embed_url }}" target="_blank" rel="noopener" data-track-map>Open in Google Maps</a>
         {% endif %}
     </div>
 </section>

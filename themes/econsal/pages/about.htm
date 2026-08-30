@@ -17,7 +17,7 @@ applySeo = 1
                 <div class="video-panel">
                     {% if aboutIntro.youtube_embed_url %}
                         <div class="ratio ratio-16x9">
-                            <iframe src="{{ aboutIntro.youtube_embed_url }}" title="{{ aboutIntro.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="{{ aboutIntro.youtube_embed_url }}{{ '?' in aboutIntro.youtube_embed_url ? '&' : '?' }}enablejsapi=1" title="{{ aboutIntro.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                         </div>
                     {% elseif aboutIntro.image %}
                         <img class="rounded-img" src="{{ aboutIntro.image.path }}" alt="{{ aboutIntro.title }}" loading="lazy">

@@ -233,3 +233,20 @@ tabs:
             tab: SEO
             default: QXV-zPiy5LPvspGYcGYyrDjpPNczc7-Ea4pQumPRQZk
             span: full
+        enable_gtm:
+            label: Enable Google Tag Manager
+            comment: Loads the GTM container and enables the theme's privacy-safe lead and engagement events.
+            tab: Analytics
+            type: switch
+            default: false
+            span: left
+        gtm_container_id:
+            label: GTM container ID
+            comment: Enter the container ID only, for example GTM-ABC1234. Do not paste the full script.
+            tab: Analytics
+            placeholder: GTM-ABC1234
+            span: right
+            trigger:
+                action: show
+                field: enable_gtm
+                condition: checked

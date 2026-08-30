@@ -19,6 +19,12 @@ Dynamic content plugin for the `econsal` OctoberCMS theme.
 5. Create RainLab.Pages static menus with codes `main-menu` and `footer-menu`.
 6. Configure Econsal settings from Backend > Econsal > Settings.
 
+## Google Tag Manager
+
+Open **Econsal Settings > Analytics**, enable Google Tag Manager, and enter the container ID (for example, `GTM-ABC1234`). The theme loads both standard GTM snippets and pushes privacy-safe engagement and lead events to `dataLayer`; it never includes submitted form values, phone numbers, or email addresses.
+
+Available custom events include `contact_click`, `cta_click`, `social_click`, `outbound_click`, `map_click`, `navigation_click`, `file_download`, `select_content`, `service_expand`, `form_start`, `form_submit`, `form_error`, `generate_lead`, `video_start`, and `view_content`. Configure the corresponding Custom Event triggers and GA4 Event tags inside the GTM container, then publish it. YouTube embeds also include `enablejsapi=1`, so GTM's built-in YouTube Video trigger can observe them.
+
 ## CMS Pages
 
 The theme includes:

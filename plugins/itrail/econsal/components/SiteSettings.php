@@ -19,6 +19,7 @@ class SiteSettings extends ComponentBase
         $this->page['addresses'] = Settings::listAddresses();
         $this->page['socialLinks'] = array_merge(Settings::socialLinks(), Settings::customSocialLinks());
         $this->page['whatsappLink'] = Settings::whatsAppLink();
+        $this->page['gtmContainerId'] = Settings::gtmContainerId();
         $this->page['canonicalUrl'] = Cms::fullUrl(request()->path() === '/' ? null : request()->path());
     }
 }
